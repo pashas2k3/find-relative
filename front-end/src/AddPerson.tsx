@@ -1,31 +1,27 @@
-import { Formik, Form, useField } from 'formik';
-import React from 'react';
+import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
-import {MySelect, MyTextInput } from './Util';
+import {MyTextInput } from './Util';
 
  // And now we can use these
   export const AddPerson = () => {
     return (
       <>
-        <h1>Add a Person</h1>
+        <h1>Add a relation</h1>
         <Formik
           initialValues={{
-            fullName: '',
-            maidenName: '',
-            nickname: '',
-            birthDate: '',
-            sex: ''
+            srcPersonId: '',
+            relation: '',
+            dstPersonId: ''
           }}
           validationSchema={Yup.object({
-            fullName: Yup.string()
+            srcPersonId: Yup.string()
               .max(100, 'Must be 100 characters or less')
-              .required('Full name required'),
-            maidenName: Yup.string()
-              .max(100, 'Must be 100 characters or less'),
+              .required('src Person id needed'),
+            relation: Yup.string()
+              .oneOf(['childOf'], 'You must accept the terms and conditions.'),
             nickname: Yup.string()
                 .max(45, 'Must be 45 characters or less'),
-            birthDate: Yup.date().required('Birth date required'), // TODO - check how this behaves
-            sex: Yup.string().oneOf(['male', 'female']).required()
+              birthDate: Yup.date().required('Birth date required') // TODO - check how this behaves
           })}
           onSubmit={(values, { setSubmitting }) => {
             setTimeout(() => {
@@ -62,15 +58,6 @@ import {MySelect, MyTextInput } from './Util';
               type="date"
               placeholder="2021-01-01"
             />
-
-            <MySelect 
-            label="Biological Sex"
-              name="sex"
-            >
-                <option value="">Select relation type</option>
-                <option value="male">male</option>
-                <option value="female">female</option>
-            </MySelect>
             <button type="submit">Submit</button>
           </Form>
         </Formik>

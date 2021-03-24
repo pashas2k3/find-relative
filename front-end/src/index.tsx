@@ -1,16 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { AddPerson } from './AddPerson';
-import * as App from './App';
-import reportWebVitals from './reportWebVitals';
+import { AddRelation } from './AddRelation';
 
 ReactDOM.render(
   <React.StrictMode>
-    {/* <App.App />
-    <App.AppC date = {new Date()}/>
-    <App.AppS />
-    <App.Toggle /> */}
     <AddPerson />
+    {/* <FindPerson /> */}
+    <AddRelation /> 
   </React.StrictMode>,
   document.getElementById('root')
 );
