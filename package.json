@@ -1,0 +1,14 @@
+{
+  "private": true,
+  "scripts": {},
+  "devDependencies": {},
+  "workspaces": [
+    "front-end/**",
+    "back-end/**"
+  ],
+  "name": "find-relative",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:pashas2k3/find-relative.git",
+  "license": "MIT"
+}
