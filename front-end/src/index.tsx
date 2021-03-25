@@ -2,12 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { AddPerson } from './AddPerson';
 import { AddRelation } from './AddRelation';
+import { FindPerson } from './FindPerson';
+import { FindRelation } from './FindRelation';
 
 ReactDOM.render(
   <React.StrictMode>
     <AddPerson />
-    {/* <FindPerson /> */}
+    <FindPerson />
     <AddRelation /> 
+    <FindRelation /> 
   </React.StrictMode>,
   document.getElementById('root')
 );
